@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="1.erd">
+	<entities>
+		<data-source id="mysql8-17a8bdcc29e-1408817b46ecd5ef">
+			<entity id="1" name="city" fq-name="hotel_reservation.city" order="0" x="661" y="274">
+				<path name="hotel_reservation"/>
+			</entity>
+			<entity id="2" name="guest_category_discount" fq-name="hotel_reservation.guest_category_discount" order="1" x="19" y="53">
+				<path name="hotel_reservation"/>
+			</entity>
+			<entity id="3" name="guest_info" fq-name="hotel_reservation.guest_info" order="2" x="233" y="12">
+				<path name="hotel_reservation"/>
+			</entity>
+			<entity id="4" name="hotel_info" fq-name="hotel_reservation.hotel_info" order="3" x="408" y="178">
+				<path name="hotel_reservation"/>
+			</entity>
+			<entity id="5" name="hotel_pictures" fq-name="hotel_reservation.hotel_pictures" order="4" x="650" y="465">
+				<path name="hotel_reservation"/>
+			</entity>
+			<entity id="6" name="room_info" fq-name="hotel_reservation.room_info" order="5" x="234" y="438">
+				<path name="hotel_reservation"/>
+			</entity>
+			<entity id="7" name="room_visit" fq-name="hotel_reservation.room_visit" order="6" x="233" y="230">
+				<path name="hotel_reservation"/>
+			</entity>
+			<entity id="8" name="visit_details" fq-name="hotel_reservation.visit_details" order="7" x="6" y="202">
+				<path name="hotel_reservation"/>
+			</entity>
+			<entity id="9" name="where_to_go" fq-name="hotel_reservation.where_to_go" order="8" x="625" y="3">
+				<path name="hotel_reservation"/>
+			</entity>
+			<entity id="10" name="where_to_go_from_hotel" fq-name="hotel_reservation.where_to_go_from_hotel" order="9" x="415" y="7">
+				<path name="hotel_reservation"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="hotel_info_ibfk_1" fq-name="hotel_reservation.hotel_info.hotel_info_ibfk_1" type="fk" pk-ref="1" fk-ref="4"/>
+		<relation name="guest_info_ibfk_1" fq-name="hotel_reservation.guest_info.guest_info_ibfk_1" type="fk" pk-ref="2" fk-ref="3"/>
+		<relation name="room_visit_ibfk_3" fq-name="hotel_reservation.room_visit.room_visit_ibfk_3" type="fk" pk-ref="3" fk-ref="7"/>
+		<relation name="hotel_pictures_ibfk_1" fq-name="hotel_reservation.hotel_pictures.hotel_pictures_ibfk_1" type="fk" pk-ref="4" fk-ref="5"/>
+		<relation name="fk_hotel_id" fq-name="hotel_reservation.room_info.fk_hotel_id" type="fk" pk-ref="4" fk-ref="6"/>
+		<relation name="room_info_ibfk_1" fq-name="hotel_reservation.room_info.room_info_ibfk_1" type="fk" pk-ref="4" fk-ref="6"/>
+		<relation name="room_visit_ibfk_2" fq-name="hotel_reservation.room_visit.room_visit_ibfk_2" type="fk" pk-ref="4" fk-ref="7"/>
+		<relation name="where_to_go_from_hotel_ibfk_2" fq-name="hotel_reservation.where_to_go_from_hotel.where_to_go_from_hotel_ibfk_2" type="fk" pk-ref="4" fk-ref="10"/>
+		<relation name="hotel_pictures_ibfk_2" fq-name="hotel_reservation.hotel_pictures.hotel_pictures_ibfk_2" type="fk" pk-ref="6" fk-ref="5"/>
+		<relation name="room_visit_ibfk_1" fq-name="hotel_reservation.room_visit.room_visit_ibfk_1" type="fk" pk-ref="6" fk-ref="7"/>
+		<relation name="visit_details_ibfk_1" fq-name="hotel_reservation.visit_details.visit_details_ibfk_1" type="fk" pk-ref="7" fk-ref="8"/>
+		<relation name="fk_where_to_go_id" fq-name="hotel_reservation.where_to_go_from_hotel.fk_where_to_go_id" type="fk" pk-ref="9" fk-ref="10"/>
+		<relation name="where_to_go_from_hotel_ibfk_1" fq-name="hotel_reservation.where_to_go_from_hotel.where_to_go_from_hotel_ibfk_1" type="fk" pk-ref="9" fk-ref="10"/>
+	</relations>
+</diagram>
